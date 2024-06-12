@@ -3,12 +3,11 @@
 Before you start working, you have to install all the codes available to your device.
 If this is your first time, go ahead and follow the guide below:
 
-1. Create a new folder in your device, this will hold the whole project.
-2. Clone into both the React and Node repository
-   `git clone https://github.com/andrwgarciaa/notion-101.git`
-3. After the notion-101 folder is installed in your device, you can now open the folder in your IDE. I recommend using Visual Studio Code.
-4. Open command prompt, and do `npm i` on the folder.
-5. After everything is installed, you are ready to go.
+1. Clone into the React repository
+   `git clone https://github.com/andrwgarciaa/multimedia-aol.git`
+2. After the multimedia-aol folder is installed in your device, you can now open the folder in your IDE.
+3. Open command prompt, and do `npm i` on the folder.
+4. After everything is installed, you are ready to go.
 
 ## Get inside your own branch
 
