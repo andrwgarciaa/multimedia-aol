@@ -22,9 +22,7 @@ const VideoContainer = () => {
         strings: [
           "In the midst of an online study session for their cloud certification exam, two students discuss their struggles with the materials for the exam. Their meeting takes an unexpected turn when a mysterious new participant with a jumbled name joins without warning. Suddenly, their rooms are plunged into darkness, and the enigmatic intruder demands they download the Cloudstrike app or face unknown consequences. Not wanting to risk anything both follow the instructions given.",
         ],
-        typeSpeed: 0.1,
-        backSpeed: 10,
-        backDelay: 2000,
+        typeSpeed: 25,
         startDelay: 500,
         showCursor: false,
         onComplete: () => {
