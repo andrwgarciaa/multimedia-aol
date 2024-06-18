@@ -1,0 +1,11 @@
+#video {
+  background-image: url("/video-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#team {
+  background-image: url("/members-bg.png");
+  background-color: rgba(0, 0, 0, 1);
+  background-size: auto;
+}
