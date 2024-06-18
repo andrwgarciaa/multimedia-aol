@@ -1,7 +1,90 @@
+import { useState, useEffect, useRef } from "react";
+import Typed from "typed.js";
+
 const VideoContainer = () => {
+  const observer = useRef<IntersectionObserver | undefined>();
+  const synopsis = useRef<HTMLDivElement>(null);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [showSynopsis, setShowSynopsis] = useState(false);
+
+  useEffect(() => {
+    if (synopsis.current) {
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) setIsTyping(true);
+      });
+
+      observer.current.observe(synopsis.current);
+    }
+
+    if (isTyping) {
+      const typed = new Typed(synopsis.current, {
+        strings: [
+          "In the midst of an online study session for their cloud certification exam, two students discuss their struggles with the materials for the exam. Their meeting takes an unexpected turn when a mysterious new participant with a jumbled name joins without warning. Suddenly, their rooms are plunged into darkness, and the enigmatic intruder demands they download the Cloudstrike app or face unknown consequences. Not wanting to risk anything both follow the instructions given.",
+        ],
+        typeSpeed: 0.1,
+        backSpeed: 10,
+        backDelay: 2000,
+        startDelay: 500,
+        showCursor: false,
+        onComplete: () => {
+          setTimeout(() => {
+            setShowVideo(true);
+          }, 1000);
+        },
+      });
+
+      return () => {
+        typed.destroy();
+        if (observer.current && synopsis.current) {
+          observer.current.unobserve(synopsis.current);
+        }
+      };
+    }
+  }, [isTyping]);
+
   return (
-    <div className="relative w-screen -mb-20 z-20">
-      <img className="w-full" src="/video-bg.png" alt="background" />
+    <div
+      id="video"
+      className="w-screen h-screen z-30 flex flex-col gap-4 justify-center items-center"
+    >
+      <div className="w-3/5">
+        {showVideo ? (
+          <p
+            className="self-start text-lg text-white hover:cursor-pointer underline underline-offset-4"
+            onClick={() => {
+              setShowVideo(false);
+              setShowSynopsis(true);
+            }}
+          >
+            &#8592; read synopsis
+          </p>
+        ) : showSynopsis ? (
+          <p
+            className="self-start text-lg text-white hover:cursor-pointer underline underline-offset-4"
+            onClick={() => {
+              setShowVideo(true);
+              setIsTyping(false);
+            }}
+          >
+            &#8592; watch video
+          </p>
+        ) : null}
+      </div>
+
+      {showVideo ? (
+        <iframe
+          src="https://www.youtube.com/embed/7e90gBu4pas"
+          title="YouTube video player"
+          className="z-30 w-3/5 h-3/5"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture"
+        ></iframe>
+      ) : (
+        <p ref={synopsis} className="z-30 w-3/5 text-xl text-white">
+          {showSynopsis &&
+            "In the midst of an online study session for their cloud certification exam, two students discuss their struggles with the materials for the exam. Their meeting takes an unexpected turn when a mysterious new participant with a jumbled name joins without warning. Suddenly, their rooms are plunged into darkness, and the enigmatic intruder demands they download the Cloudstrike app or face unknown consequences. Not wanting to risk anything both follow the instructions given."}
+        </p>
+      )}
     </div>
   );
 };

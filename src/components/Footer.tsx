@@ -8,7 +8,10 @@ import YoutubeIcon from "./YoutubeIcon";
 
 const Footer = () => {
   return (
-    <footer className="static bottom-0 z-10 w-screen h-max py-16 bg-[#101010] flex flex-col justify-center items-center text-cream">
+    <footer
+      id="about"
+      className="static bottom-0 z-10 w-screen h-max p-4 bg-[#101010] flex flex-col justify-center items-center text-cream"
+    >
       <div className="w-full p-4 flex justify-between items-center">
         <div className="flex-1">
           <CloudstrikeLogo />{" "}
@@ -27,7 +30,7 @@ const Footer = () => {
         <div className="w-3/5">
           <p className="text-2xl font-semibold">About Cloudstrike</p>
           <p>
-            CloudStrike, a revolutionary cloud training app designed for IT
+            Cloudstrike, a revolutionary cloud training app designed for IT
             professionals, offers comprehensive, interactive courses, real-time
             progress tracking, and hands-on labs, empowering users to master
             cloud technologies, enhance their skills, and achieve
