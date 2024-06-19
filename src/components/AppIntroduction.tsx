@@ -22,7 +22,7 @@ const AppIntroduction = () => {
   };
 
   return (
-    <div id="product" className="relative w-screen h-5/6">
+    <div id="product" className="relative w-screen h-5/6 overflow-hidden">
       <div
         ref={text}
         id="intro-text"
@@ -49,13 +49,14 @@ const AppIntroduction = () => {
       </div>
       <div
         ref={phone}
-        className="z-10 absolute h-max w-max -right-[18vw] bottom-0 "
+        className="z-10 absolute h-max w-max -right-[17vw] bottom-0 "
       >
         <img
           ref={arrow}
           src="/arrow.png"
           alt="arrow"
-          className="scale-x-[-1] rotate-[220deg] absolute -left-20 top-36 animate-pulse"
+          className="scale-x-[-1] rotate-[220deg] absolute -left-20 top-36 animate-pulse hover:cursor-pointer"
+          onClick={movePhone}
         />
 
         <img
