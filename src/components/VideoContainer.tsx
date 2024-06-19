@@ -44,7 +44,7 @@ const VideoContainer = () => {
   return (
     <div
       id="video"
-      className="w-screen h-screen z-30 flex flex-col gap-4 justify-center items-center"
+      className="w-screen h-screen flex flex-col gap-4 justify-center items-center"
     >
       <div className="w-3/5">
         {showVideo ? (
@@ -72,10 +72,10 @@ const VideoContainer = () => {
 
       {showVideo ? (
         <iframe
-          src="https://www.youtube.com/embed/7e90gBu4pas"
-          title="YouTube video player"
           className="z-30 w-3/5 h-3/5"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture"
+          src="https://www.youtube.com/embed/uyC1c1b6qj4?si=7N27G7E3AECx6NXD"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
         ></iframe>
       ) : (
         <p ref={synopsis} className="z-30 w-3/5 text-xl text-white">
