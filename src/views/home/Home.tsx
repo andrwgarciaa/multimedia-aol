@@ -7,7 +7,7 @@ import AppIntroduction from "../../components/AppIntroduction";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen overflow-auto scroll-smooth">
+    <div className="relative w-screen h-screen overflow-auto scroll-smooth">
       <Header />
       <AppIntroduction />
       <VideoContainer />
