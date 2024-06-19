@@ -47,7 +47,10 @@ const AppIntroduction = () => {
           />
         </div>
       </div>
-      <div ref={phone} className="z-10 absolute -right-[300px] bottom-0 ">
+      <div
+        ref={phone}
+        className="z-10 absolute h-max w-max -right-[18vw] bottom-0 "
+      >
         <img
           ref={arrow}
           src="/arrow.png"
@@ -58,7 +61,7 @@ const AppIntroduction = () => {
         <img
           ref={phone}
           src="/app.png"
-          className="w-auto h-[700px] hover:cursor-pointer"
+          className="h-[70vh] hover:cursor-pointer"
           onClick={movePhone}
         />
       </div>
